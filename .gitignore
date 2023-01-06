@@ -1,0 +1,6 @@
+/Lib.Redis.Client/.vs
+/Lib.Redis.Client/bin
+/Lib.Redis.Client/obj
+/.vs
+/RedisTest/bin
+/RedisTest/obj
