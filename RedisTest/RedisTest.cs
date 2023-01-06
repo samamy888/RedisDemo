@@ -7,10 +7,9 @@ namespace RedisTest;
 [TestClass]
 public class RedisTest
 {
-    [TestMethod]
+    [Test]
     public void StringSet()
     {
-        RedisClient.Init("localhost");
         var db = new RedisClient().Database;
 
         // Set
@@ -25,18 +24,16 @@ public class RedisTest
         var test = db.StringGet(key);
     }
 
-    [TestMethod]
+    [Test]
     public void Sets()
     {
         var db = new RedisClient().Database;
         db.StringIncrement("visitCount");
 
         // Set
-        string value = "Hello World";
         db.SetAdd("event", "001");
         db.SetAdd("event", "002");
         db.SetAdd("event", "003");
-        var hashGetAll = db.HashGetAll("event");
 
         // Get 
         var result = db.SetScan("event", "00*");
@@ -46,7 +43,7 @@ public class RedisTest
         db.SetRemove("event", "002");
     }
 
-    [TestMethod]
+    [Test]
     public void Hashset()
     {
         var db = new RedisClient().Database;
